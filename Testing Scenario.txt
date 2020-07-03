@@ -1,0 +1,36 @@
+//unit testing
+MovieViewModelTest
+memuat movie
+memastikan movie tidak null
+memastikan jumlah movie sesuai dengan yang diharapkan
+
+TvViewModelTest
+memuat tv
+memastikan tv tidak null
+memastikan jumlah tv sesuai dengan yang diharapkan
+
+DetailViewModelTest
+memuat data detail
+memastikan data movie detail tidak null
+memastikan data tv detail tidak null
+memastikan data movie sesuai harapan
+memastikan data tv sesuai harapan
+
+
+//instrumen testing
+menampilkan data movie
+memastikan rv_movie dalam keadaan tampil
+gulir rv_movie ke posisi terakhir
+Memberi tindakan klik pada data pertama di rv_movie
+
+menampilkan data tv
+Memastikan tab Tv dapat di klik
+memastikan rv_tv dalam keadaan tampil
+gulir rv_tv ke posisi terakhir
+Memberi tindakan klik pada data pertama di rv_tv
+
+menampilkan data Detail
+Memastikan TextView untuk title ada
+Memastikan TextView untuk title tampil sesuai dengan yang diharapkan
+Memastikan TextView untuk overview ada
+Memastikan TextView untuk overview tampil sesuai dengan yang diharapkan
