@@ -1,4 +1,4 @@
-#Fri Jul 03 19:35:22 WIB 2020
+#Tue Jul 07 11:15:04 WIB 2020
 base.0=/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

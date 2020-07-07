@@ -1,6 +1,5 @@
 package com.fghilmany.themoviedbwithjetpack.ui.detail
 
-import com.fghilmany.themoviedbwithjetpack.utils.DataDummy
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test

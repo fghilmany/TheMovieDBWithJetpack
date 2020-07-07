@@ -36,6 +36,9 @@ ext {
     junitVersion = '4.12'
     espressoVersion = '3.1.0'
     androidXTestVersion = '1.2.0'
+    mockitoVersion = '2.23.4'
+    mockitoKotlinVersion = '2.1.0'
+    idleResourceVersion = '3.2.0'
 
     materialVersion = '1.1.0'
     recyclerViewVersion = '1.1.0'
@@ -43,4 +46,8 @@ ext {
 
     archLifecycleVersion = '2.1.0'
     shapeOfViewVersion = '1.4.5'
+    
+    retrofitVersion = '2.7.1'
+    okhttp3Version = '4.2.1'
+
 }
