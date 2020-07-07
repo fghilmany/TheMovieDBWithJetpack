@@ -6,6 +6,8 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class DetailMovieResponse(
+    @SerializedName("id")
+    var id: Int = 0,
     @SerializedName("backdrop_path")
     var backdropPath: String = "",
     @SerializedName("title")

@@ -4,7 +4,10 @@ import android.util.Log
 import com.fghilmany.themoviedbwithjetpack.BuildConfig
 import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.MovieEntity
 import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEntity
-import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.*
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailMovieResponse
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailTvSeriesResponse
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.MovieResponse
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.TvSeriesResponse
 import com.fghilmany.themoviedbwithjetpack.helper.ApiClient
 import com.fghilmany.themoviedbwithjetpack.utils.EspressoIdlingResource
 import retrofit2.Call

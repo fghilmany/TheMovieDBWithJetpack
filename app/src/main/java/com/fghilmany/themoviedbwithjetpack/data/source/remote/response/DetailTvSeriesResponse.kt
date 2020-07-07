@@ -6,6 +6,8 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class DetailTvSeriesResponse(
+    @SerializedName("id")
+    var id: Int = 0,
     @SerializedName("name")
     var name: String = "",
     @SerializedName("backdrop_path")

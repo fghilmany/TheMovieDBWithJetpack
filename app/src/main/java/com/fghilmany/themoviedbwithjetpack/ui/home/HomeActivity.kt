@@ -1,7 +1,7 @@
 package com.fghilmany.themoviedbwithjetpack.ui.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.fghilmany.themoviedbwithjetpack.R
 import kotlinx.android.synthetic.main.activity_main.*
 
