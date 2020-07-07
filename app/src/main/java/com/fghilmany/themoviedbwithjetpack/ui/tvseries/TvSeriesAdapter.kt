@@ -8,14 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.fghilmany.themoviedbwithjetpack.R
-import com.fghilmany.themoviedbwithjetpack.data.MovieEntity
+import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEntity
 import com.fghilmany.themoviedbwithjetpack.ui.detail.DetailActivity
 import kotlinx.android.synthetic.main.item_movie_tv.view.*
 
 class TvSeriesAdapter : RecyclerView.Adapter<TvSeriesAdapter.TvViewHolder>(){
-    private var listMovie = ArrayList<MovieEntity>()
+    private var listMovie = ArrayList<TvSeriesEntity>()
 
-    fun setMovies(movies: List<MovieEntity>?){
+    fun setMovies(movies: List<TvSeriesEntity>?){
         if (movies == null) return
         listMovie.clear()
         listMovie.addAll(movies)
@@ -37,16 +37,17 @@ class TvSeriesAdapter : RecyclerView.Adapter<TvSeriesAdapter.TvViewHolder>(){
     }
 
     class TvViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        fun bind (movie: MovieEntity){
+        fun bind (movie: TvSeriesEntity){
             with(itemView){
-                tv_list_title.text = movie.title
+                tv_list_title.text = movie.name
+                tv_rating.text = movie.voteAverage.toString()
                 setOnClickListener {
                     val i = Intent(itemView.context, DetailActivity::class.java)
-                    i.putExtra(DetailActivity.EXTRA_ID, movie.movieId)
+                    i.putExtra(DetailActivity.EXTRA_ID_TV, movie.id.toString())
                     itemView.context.startActivity(i)
                 }
                 Glide.with(context)
-                    .load(movie.imagePath)
+                    .load("https://image.tmdb.org/t/p/w780"+movie.backdropPath)
                     .apply(RequestOptions.placeholderOf(R.drawable.ic_loading)
                         .error(R.drawable.ic_error))
                     .into(iv_list)

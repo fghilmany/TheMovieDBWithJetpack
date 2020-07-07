@@ -1,23 +1,50 @@
 package com.fghilmany.themoviedbwithjetpack.ui.tvseries
 
-import org.junit.Test
-
-import org.junit.Assert.*
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
+import com.fghilmany.themoviedbwithjetpack.data.source.DataRepository
+import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEntity
+import org.junit.Assert.assertNotNull
 import org.junit.Before
+import org.junit.Rule
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.mockito.Mock
+import org.mockito.Mockito
+import org.mockito.MockitoAnnotations
+import org.mockito.junit.MockitoJUnitRunner
 
+@RunWith(MockitoJUnitRunner::class)
 class TvSeriesViewModelTest {
 
     private lateinit var viewModel: TvSeriesViewModel
 
+    @get:Rule
+    var instantTaskExecutorRule = InstantTaskExecutorRule()
+
+    @Mock
+    private lateinit var dataRepository: DataRepository
+
+    @Mock
+    private lateinit var observer: Observer<List<TvSeriesEntity>>
+
     @Before
-    fun setUp() {
-        viewModel = TvSeriesViewModel()
+    fun setUp(){
+        MockitoAnnotations.initMocks(this)
+        viewModel = TvSeriesViewModel(dataRepository)
     }
 
     @Test
     fun getMovies() {
-        val tvEntities = viewModel.getMovies()
+        val dataDummy = listOf<TvSeriesEntity>()
+        val dataMovie = MutableLiveData<List<TvSeriesEntity>>()
+        dataMovie.value = dataDummy
+        Mockito.`when`(dataRepository.getListTv()).thenReturn(dataMovie)
+        val tvEntities = viewModel.getMovies().value
         assertNotNull(tvEntities)
-        assertEquals(10, tvEntities.size)
+
+        viewModel.getMovies().observeForever(observer)
+        Mockito.verify(observer).onChanged(dataDummy)
     }
 }

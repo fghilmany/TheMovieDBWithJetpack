@@ -1,14 +1,15 @@
 package com.fghilmany.themoviedbwithjetpack.ui.movie
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.fghilmany.themoviedbwithjetpack.R
+import com.fghilmany.themoviedbwithjetpack.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_movie.*
 
 /**
@@ -27,20 +28,21 @@ class MovieFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (activity != null) {
-            val viewModel = ViewModelProvider(
-                this,
-                ViewModelProvider.NewInstanceFactory()
-            )[MovieViewModel::class.java]
-            val movies = viewModel.getMovies()
+            val factory = ViewModelFactory.getInstance(requireActivity())
+            val viewModel = ViewModelProvider(this, factory)[MovieViewModel::class.java]
 
             val movieAdapter = MovieAdapter()
-            movieAdapter.setMovies(movies)
+            progress_bar.visibility = View.VISIBLE
+            viewModel.getMovies().observe(this, Observer { movie ->
+                progress_bar.visibility = View.GONE
+                movieAdapter.setMovies(movie)
+                movieAdapter.notifyDataSetChanged()
+            })
 
-            with(rv_movie) {
-                layoutManager = LinearLayoutManager(context)
-                setHasFixedSize(true)
-                adapter = movieAdapter
-            }
+
+            rv_movie.layoutManager = LinearLayoutManager(context)
+            rv_movie.setHasFixedSize(true)
+            rv_movie.adapter = movieAdapter
         }
     }
 }
