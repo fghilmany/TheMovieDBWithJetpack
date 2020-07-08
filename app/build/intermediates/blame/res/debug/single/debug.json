@@ -60,6 +60,10 @@
         "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/layout_fragment_search.xml.flat",
+        "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/layout/fragment_search.xml"
+    },
+    {
         "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
@@ -80,6 +84,10 @@
         "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/drawable_ic_tmdb_logo.xml.flat",
+        "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/drawable/ic_tmdb_logo.xml"
+    },
+    {
         "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/drawable_ic_error.xml.flat",
         "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/drawable/ic_error.xml"
     },
@@ -90,6 +98,10 @@
     {
         "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/layout_item_movie_tv.xml.flat",
         "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/layout/item_movie_tv.xml"
+    },
+    {
+        "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/menu_main_menu.xml.flat",
+        "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/menu/main_menu.xml"
     },
     {
         "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/drawable-v24_ic_launcher_foreground.xml.flat",

@@ -1,5 +1,6 @@
 package com.fghilmany.themoviedbwithjetpack.ui.movie
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
@@ -38,10 +39,13 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
     }
 
     class MovieViewHolder(view: View): RecyclerView.ViewHolder(view) {
+        @SuppressLint("SetTextI18n")
         fun bind (movie: MovieEntity){
             with(itemView){
                 tv_list_title.text = movie.title
                 tv_rating.text = movie.voteAverage.toString()
+                rating_bar.rating = movie.voteAverage/2
+                tv_date.text = "Realease date: " + movie.release_date
                 Log.e("CEK_ID", movie.id.toString())
                 setOnClickListener {
                     val i = Intent(itemView.context, DetailActivity::class.java)

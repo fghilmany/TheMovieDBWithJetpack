@@ -1,9 +1,6 @@
 package com.fghilmany.themoviedbwithjetpack.helper
 
-import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailMovieResponse
-import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailTvSeriesResponse
-import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.MovieResponse
-import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.TvSeriesResponse
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.*
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -32,5 +29,11 @@ interface ApiInterface{
     fun getTvData(
         @Query("api_key")apiKey: String
     ):Call<TvSeriesResponse>
+
+    @GET("search/multi")
+    fun getSearchMovieAndTv(
+        @Query("api_key")apiKey: String,
+        @Query("query")query: String
+    ):Call<SearchResponse>
 
 }

@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.MovieEntity
+import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.SearchEntity
 import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEntity
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.RemoteDataSource
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailMovieResponse
@@ -91,5 +92,23 @@ class DataRepository private constructor(private val remoteDataSource: RemoteDat
         return movieDetail
 
     }
+
+    override fun getSearch(query: String): LiveData<List<SearchEntity>> {
+        val searchMovie = MutableLiveData<List<SearchEntity>>()
+        remoteDataSource.getSearchMovie(object : RemoteDataSource.GetSearchMovieAndTvCallback{
+            override fun onResponse(listSearch: List<SearchEntity>?) {
+                Log.e("CEK_RESPONSE","INI $listSearch")
+                searchMovie.postValue(listSearch)
+            }
+
+            override fun throwbale(t: Throwable) {
+                Log.e("ERROR_LIST_MOVIE",t.localizedMessage!!)
+            }
+
+        }, query)
+
+        return searchMovie
+    }
+
 
 }

@@ -17,7 +17,7 @@ android {
         vectorDrawables.useSupportLibrary = true
 
         buildConfigField "String", "TMDB_BASE_URL", '"https://api.themoviedb.org/3/"'
-        buildConfigField ("String", "TMDB_API_KEY", '"20a3197e5ca08eec30783357b1832998"')
+        buildConfigField("String", "TMDB_API_KEY", '"20a3197e5ca08eec30783357b1832998"')
     }
 
     buildTypes {
@@ -50,6 +50,7 @@ dependencies {
     implementation "com.github.florent37:shapeofview:$shapeOfViewVersion"
 
     //testing
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
@@ -64,6 +65,7 @@ dependencies {
 
     //architecture component
     implementation "androidx.lifecycle:lifecycle-viewmodel:$archLifecycleVersion"
+    implementation "android.arch.lifecycle:extensions:$archLifecycleVersion"
 
     //network (API)
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
