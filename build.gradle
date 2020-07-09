@@ -46,6 +46,7 @@ ext {
 
     archLifecycleVersion = '2.1.0'
     shapeOfViewVersion = '1.4.5'
+    wasabefBlur = '3.0.0'
     
     retrofitVersion = '2.7.1'
     okhttp3Version = '4.2.1'

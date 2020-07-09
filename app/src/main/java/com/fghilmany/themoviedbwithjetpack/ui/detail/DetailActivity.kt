@@ -9,10 +9,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.RequestOptions.bitmapTransform
 import com.fghilmany.themoviedbwithjetpack.R
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailMovieResponse
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailTvSeriesResponse
 import com.fghilmany.themoviedbwithjetpack.viewmodel.ViewModelFactory
+import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
@@ -61,11 +63,16 @@ class DetailActivity : AppCompatActivity() {
         tv_status.text = "Status: "+ detailMovie.status
         tv_rating.text = detailMovie.voteAverage.toString()
         Glide.with(this)
-            .load("https://image.tmdb.org/t/p/w780"+detailMovie.backdropPath)
+            .load("https://image.tmdb.org/t/p/w780"+detailMovie.posterPath)
             .apply ( RequestOptions.placeholderOf(R.drawable.ic_loading)
                 .error(R.drawable.ic_error))
             .centerCrop()
             .into(iv_poster_detail)
+
+        Glide.with(this)
+            .load("https://image.tmdb.org/t/p/w780"+detailMovie.backdropPath)
+            .apply(bitmapTransform(BlurTransformation(5, 3)))
+            .into(iv_backdrop)
     }
 
     @SuppressLint("SetTextI18n")
@@ -76,10 +83,15 @@ class DetailActivity : AppCompatActivity() {
         tv_seasion.text = "Season: "+ detailTvSeries.number_of_seasons
         tv_rating.text = detailTvSeries.voteAverage.toString()
         Glide.with(this)
-            .load("https://image.tmdb.org/t/p/w780"+detailTvSeries.backdropPath)
-            .apply (RequestOptions.placeholderOf(R.drawable.ic_loading)
+            .load("https://image.tmdb.org/t/p/w780"+detailTvSeries.posterPath)
+            .apply ( RequestOptions.placeholderOf(R.drawable.ic_loading)
                 .error(R.drawable.ic_error))
             .centerCrop()
             .into(iv_poster_detail)
+
+        Glide.with(this)
+            .load("https://image.tmdb.org/t/p/w780"+detailTvSeries.backdropPath)
+            .apply(bitmapTransform(BlurTransformation(5, 1)))
+            .into(iv_backdrop)
     }
 }

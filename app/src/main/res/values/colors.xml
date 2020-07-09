@@ -6,4 +6,7 @@
     <color name="text_black">#000000</color>
     <color name="colorTextTertiary">#EFEFEF</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#100F0F</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="semi_black">#272727</color>
 </resources>

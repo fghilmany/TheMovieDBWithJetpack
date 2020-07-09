@@ -12,6 +12,8 @@ data class DetailTvSeriesResponse(
     var name: String = "",
     @SerializedName("backdrop_path")
     var backdropPath: String = "",
+    @SerializedName("poster_path")
+    var posterPath: String = "",
     @SerializedName("overview")
     var overview: String = "",
     @SerializedName("vote_average")

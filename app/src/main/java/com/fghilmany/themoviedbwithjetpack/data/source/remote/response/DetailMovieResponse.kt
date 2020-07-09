@@ -10,6 +10,8 @@ data class DetailMovieResponse(
     var id: Int = 0,
     @SerializedName("backdrop_path")
     var backdropPath: String = "",
+    @SerializedName("poster_path")
+    var posterPath: String = "",
     @SerializedName("title")
     var title: String = "",
     @SerializedName("overview")

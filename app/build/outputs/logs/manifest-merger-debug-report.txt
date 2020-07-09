@@ -11,7 +11,9 @@ MERGED from [androidx.appcompat:appcompat:1.1.0] /home/fghilmany/.gradle/caches/
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/f2ba21a9638e5fd2269785d55a9b0d33/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/df185bf65f20930e6a488ec363ef7f61/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/59a0d9b493c71bd63175f5da6c378b5c/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [jp.wasabeef:glide-transformations:4.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/566cd19a4ed59cb38c2c4ea5ed1af753/jetified-glide-transformations-4.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.bumptech.glide:glide:4.10.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/5c31dd6a93fc512df45117f5dcbf5531/jetified-glide-4.10.0/AndroidManifest.xml:2:1-12:12
+MERGED from [jp.wasabeef:blurry:3.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/a1eea7dd63b9f4772696d8e7ab6f380a/jetified-blurry-3.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/808e70a5b52106146207d061ee23c088/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.test.espresso:espresso-idling-resource:3.2.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/a4bc9108fcd14343af3baa01c3a08340/espresso-idling-resource-3.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/f65278b829ca7ccd83fe7d8d65a02e1f/lifecycle-extensions-2.0.0/AndroidManifest.xml:17:1-25:12
@@ -138,8 +140,12 @@ MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/fghilmany/.gradle/cache
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/df185bf65f20930e6a488ec363ef7f61/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/59a0d9b493c71bd63175f5da6c378b5c/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/59a0d9b493c71bd63175f5da6c378b5c/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [jp.wasabeef:glide-transformations:4.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/566cd19a4ed59cb38c2c4ea5ed1af753/jetified-glide-transformations-4.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [jp.wasabeef:glide-transformations:4.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/566cd19a4ed59cb38c2c4ea5ed1af753/jetified-glide-transformations-4.0.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:glide:4.10.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/5c31dd6a93fc512df45117f5dcbf5531/jetified-glide-4.10.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.10.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/5c31dd6a93fc512df45117f5dcbf5531/jetified-glide-4.10.0/AndroidManifest.xml:6:5-8:41
+MERGED from [jp.wasabeef:blurry:3.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/a1eea7dd63b9f4772696d8e7ab6f380a/jetified-blurry-3.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [jp.wasabeef:blurry:3.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/a1eea7dd63b9f4772696d8e7ab6f380a/jetified-blurry-3.0.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/808e70a5b52106146207d061ee23c088/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/808e70a5b52106146207d061ee23c088/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.test.espresso:espresso-idling-resource:3.2.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/a4bc9108fcd14343af3baa01c3a08340/espresso-idling-resource-3.2.0/AndroidManifest.xml:20:5-22:41
