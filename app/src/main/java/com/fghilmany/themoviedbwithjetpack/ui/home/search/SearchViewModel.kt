@@ -1,5 +1,6 @@
 package com.fghilmany.themoviedbwithjetpack.ui.home.search
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
@@ -13,6 +14,7 @@ class SearchViewModel(private val dataRepository: DataRepository) : ViewModel() 
 
     fun setQuery(query: String){
         this.query.value = query
+        Log.e("CEKQUEY", query)
     }
 
     fun getMovies(): LiveData<List<SearchEntity>> = Transformations.switchMap(query){query ->

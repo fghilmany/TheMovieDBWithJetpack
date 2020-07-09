@@ -10,7 +10,7 @@ import com.fghilmany.themoviedbwithjetpack.data.source.remote.RemoteDataSource
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailMovieResponse
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailTvSeriesResponse
 
-class DataRepository private constructor(private val remoteDataSource: RemoteDataSource): Datasource{
+class DataRepository (private val remoteDataSource: RemoteDataSource): Datasource{
 
     companion object{
         @Volatile

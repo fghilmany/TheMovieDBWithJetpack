@@ -7,18 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.fghilmany.themoviedbwithjetpack.R
-import com.fghilmany.themoviedbwithjetpack.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_search.*
+import org.koin.android.viewmodel.ext.android.getViewModel
+import org.koin.android.viewmodel.ext.android.sharedViewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 
 /**
  * A simple [Fragment] subclass.
  */
 class SearchFragment : Fragment() {
+
+    private val viewModel: SearchViewModel by sharedViewModel()
 
     companion object {
         val TAG = SearchFragment::class.java.simpleName
@@ -40,11 +42,11 @@ class SearchFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (activity != null) {
-            val factory = ViewModelFactory.getInstance(requireActivity())
-            val viewModel = ViewModelProvider(requireActivity(), factory)[SearchViewModel::class.java]
+            Log.e("CEK_VM_SHARED", "movie.toString()")
 
             val  searchAdapter = SearchAdapter()
             viewModel.getMovies().observe(this, Observer { movie ->
+                Log.e("CEK_VM_SHARED", movie.toString())
                 searchAdapter.setMovies(movie)
                 searchAdapter.notifyDataSetChanged()
             })

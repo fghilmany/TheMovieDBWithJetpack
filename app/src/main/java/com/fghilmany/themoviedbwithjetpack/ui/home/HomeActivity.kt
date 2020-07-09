@@ -20,11 +20,14 @@ import com.fghilmany.themoviedbwithjetpack.ui.home.search.SearchFragment
 import com.fghilmany.themoviedbwithjetpack.ui.home.search.SearchViewModel
 import com.fghilmany.themoviedbwithjetpack.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_home.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeActivity : AppCompatActivity() {
 
+
+
     private lateinit var searchView: SearchView
-    private lateinit var viewModel: SearchViewModel
+    private val viewModel :  SearchViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,9 +39,6 @@ class HomeActivity : AppCompatActivity() {
         val sectionPagerAdapter = SectionPagerAdapter(this, supportFragmentManager)
         view_pager.adapter = sectionPagerAdapter
         tabs.setupWithViewPager(view_pager)
-
-        val factory = ViewModelFactory.getInstance(this)
-        viewModel = ViewModelProvider(this, factory)[SearchViewModel::class.java]
 
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)

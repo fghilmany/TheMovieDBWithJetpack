@@ -16,8 +16,11 @@ import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailTvS
 import com.fghilmany.themoviedbwithjetpack.viewmodel.ViewModelFactory
 import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_detail.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailActivity : AppCompatActivity() {
+
+    private val viewModel: DetailViewModel by viewModel()
 
     companion object{
         const val EXTRA_ID_MOVIE = "extra_id_movie"
@@ -28,15 +31,13 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        val factory = ViewModelFactory.getInstance(this)
-        val viewModel = ViewModelProvider(this, factory)[DetailViewModel::class.java]
-
         val extras = intent.extras
         if (extras != null){
             val idMovie = extras.getString(EXTRA_ID_MOVIE)
             val idTv = extras.getString(EXTRA_ID_TV)
             Log.e("CEKIDMOVIE",idMovie.toString())
             Log.e("CEKIDTV",idTv.toString())
+            progress_bar.visibility = View.VISIBLE
             if (idMovie != null){
                 viewModel.selectedMovie(idMovie)
                 viewModel.getDetailMovie().observe(this, Observer {movie ->
