@@ -3,11 +3,9 @@ package com.fghilmany.themoviedbwithjetpack.data.source.remote
 import android.util.Log
 import com.fghilmany.themoviedbwithjetpack.BuildConfig
 import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.MovieEntity
+import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.SearchEntity
 import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEntity
-import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailMovieResponse
-import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailTvSeriesResponse
-import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.MovieResponse
-import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.TvSeriesResponse
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.*
 import com.fghilmany.themoviedbwithjetpack.helper.ApiClient
 import com.fghilmany.themoviedbwithjetpack.utils.EspressoIdlingResource
 import retrofit2.Call
@@ -113,6 +111,27 @@ class RemoteDataSource{
 
     }
 
+    fun getSearchMovie(getSearchCallback: GetSearchMovieAndTvCallback, query: String){
+        EspressoIdlingResource.increment()
+        retrofit.getSearchMovieAndTv(BuildConfig.TMDB_API_KEY, query)
+            .enqueue(object : Callback<SearchResponse>{
+                override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
+                    getSearchCallback.throwbale(t)
+                    EspressoIdlingResource.decrement()
+                }
+
+                override fun onResponse(
+                    call: Call<SearchResponse>,
+                    response: Response<SearchResponse>
+                ) {
+                    Log.e("CEK_RESPONSE_RETRO","INI ${response.body()}")
+                    response.body()?.let { getSearchCallback.onResponse(response.body()?.results) }
+                    EspressoIdlingResource.decrement()
+                }
+
+            })
+    }
+
     interface GetListMovieCallback {
         fun onResponse(listMovie: List<MovieEntity>?)
         fun throwbale(t: Throwable)
@@ -130,6 +149,11 @@ class RemoteDataSource{
 
     interface GetDetailTvCallback {
         fun onResponse(detailTv: DetailTvSeriesResponse)
+        fun throwbale(t: Throwable)
+    }
+
+    interface GetSearchMovieAndTvCallback {
+        fun onResponse(listSearch: List<SearchEntity>?)
         fun throwbale(t: Throwable)
     }
 }

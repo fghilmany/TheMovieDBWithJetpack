@@ -10,8 +10,10 @@ data class TvSeriesEntity(
     var id: Int = 0,
     @SerializedName("name")
     var name: String = "",
-    @SerializedName("backdrop_path")
-    var backdropPath: String = "",
+    @SerializedName("poster_path")
+    var posterPath: String = "",
     @SerializedName("vote_average")
-    var voteAverage: Double = 0.0
+    var voteAverage: Double = 0.0,
+    @SerializedName("first_air_date")
+    var first_air_date: String = ""
 ): Parcelable

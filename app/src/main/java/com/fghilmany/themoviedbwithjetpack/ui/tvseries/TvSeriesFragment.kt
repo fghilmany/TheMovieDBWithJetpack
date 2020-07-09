@@ -11,11 +11,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.fghilmany.themoviedbwithjetpack.R
 import com.fghilmany.themoviedbwithjetpack.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_tv_series.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 /**
  * A simple [Fragment] subclass.
  */
 class TvSeriesFragment : Fragment() {
+
+    private val viewModel: TvSeriesViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,8 +30,6 @@ class TvSeriesFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (activity != null){
-            val factory = ViewModelFactory.getInstance(requireActivity())
-            val viewModel = ViewModelProvider(this, factory)[TvSeriesViewModel::class.java]
 
             val movieAdapter = TvSeriesAdapter()
             progress_bar.visibility = View.VISIBLE

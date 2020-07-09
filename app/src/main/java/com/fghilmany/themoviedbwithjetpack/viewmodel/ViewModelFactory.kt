@@ -7,6 +7,7 @@ import com.fghilmany.themoviedbwithjetpack.data.source.DataRepository
 import com.fghilmany.themoviedbwithjetpack.di.Injection
 import com.fghilmany.themoviedbwithjetpack.ui.detail.DetailViewModel
 import com.fghilmany.themoviedbwithjetpack.ui.movie.MovieViewModel
+import com.fghilmany.themoviedbwithjetpack.ui.home.search.SearchViewModel
 import com.fghilmany.themoviedbwithjetpack.ui.tvseries.TvSeriesViewModel
 
 class ViewModelFactory private constructor(private val mDataRepository: DataRepository)
@@ -24,15 +25,18 @@ class ViewModelFactory private constructor(private val mDataRepository: DataRepo
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T{
-        when {
+        return when {
             modelClass.isAssignableFrom(MovieViewModel::class.java) -> {
-                return MovieViewModel (mDataRepository) as T
+                MovieViewModel (mDataRepository) as T
             }
             modelClass.isAssignableFrom(TvSeriesViewModel::class.java) -> {
-                return TvSeriesViewModel (mDataRepository) as T
+                TvSeriesViewModel (mDataRepository) as T
             }
             modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
-                return DetailViewModel (mDataRepository) as T
+                DetailViewModel (mDataRepository) as T
+            }
+            modelClass.isAssignableFrom(SearchViewModel::class.java) -> {
+                SearchViewModel (mDataRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: "+modelClass.name)
         }
