@@ -2,9 +2,10 @@ package com.fghilmany.themoviedbwithjetpack.ui.movie
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.fghilmany.themoviedbwithjetpack.data.source.DataRepository
+import com.fghilmany.themoviedbwithjetpack.data.DataRepository
 import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.MovieEntity
+import com.fghilmany.themoviedbwithjetpack.vo.Resource
 
 class MovieViewModel(private val dataRepository: DataRepository) : ViewModel() {
-    fun getMovies(): LiveData<List<MovieEntity>> = dataRepository.getListMovie()
+    fun getMovies(): LiveData<Resource<List<MovieEntity>>> = dataRepository.getListMovie()
 }

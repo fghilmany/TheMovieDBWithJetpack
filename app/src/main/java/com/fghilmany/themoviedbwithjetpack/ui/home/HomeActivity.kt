@@ -2,6 +2,7 @@ package com.fghilmany.themoviedbwithjetpack.ui.home
 
 import android.app.SearchManager
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -16,6 +17,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.MenuItemCompat
 import androidx.lifecycle.ViewModelProvider
 import com.fghilmany.themoviedbwithjetpack.R
+import com.fghilmany.themoviedbwithjetpack.ui.favorite.FavoriteActivity
 import com.fghilmany.themoviedbwithjetpack.ui.home.search.SearchFragment
 import com.fghilmany.themoviedbwithjetpack.ui.home.search.SearchViewModel
 import com.fghilmany.themoviedbwithjetpack.viewmodel.ViewModelFactory
@@ -84,7 +86,17 @@ class HomeActivity : AppCompatActivity() {
         val searchManager =
             getSystemService(Context.SEARCH_SERVICE) as SearchManager
         searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.action_favorite -> {
+                startActivity(Intent(this, FavoriteActivity::class.java))
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 

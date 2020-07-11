@@ -9,8 +9,8 @@ import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.rule.ActivityTestRule
 import com.fghilmany.themoviedbwithjetpack.R
-import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.MovieEntity
-import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEntity
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.Movie
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.TvSeries
 import com.fghilmany.themoviedbwithjetpack.utils.EspressoIdlingResource
 import org.junit.After
 import org.junit.Before
@@ -18,8 +18,8 @@ import org.junit.Rule
 import org.junit.Test
 
 class HomeActivityTest{
-    private val movie = listOf<MovieEntity>()
-    private val tv = listOf<TvSeriesEntity>()
+    private val movie = listOf<Movie>()
+    private val tv = listOf<TvSeries>()
 
     @get:Rule
     var activityRule  = ActivityTestRule(HomeActivity::class.java)

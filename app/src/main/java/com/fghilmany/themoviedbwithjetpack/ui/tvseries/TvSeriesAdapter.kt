@@ -43,7 +43,7 @@ class TvSeriesAdapter : RecyclerView.Adapter<TvSeriesAdapter.TvViewHolder>(){
             with(itemView){
                 tv_list_title.text = movie.name
                 tv_rating.text = movie.voteAverage.toString()
-                rating_bar.rating = (movie.voteAverage/2).toFloat()
+                rating_bar.rating = (movie.voteAverage/2)
                 tv_date.text ="First air date: " + movie.first_air_date
                 setOnClickListener {
                     val i = Intent(itemView.context, DetailActivity::class.java)

@@ -1,4 +1,4 @@
-package com.fghilmany.themoviedbwithjetpack
+package com.fghilmany.themoviedbwithjetpack.di
 
 import android.app.Application
 import com.fghilmany.themoviedbwithjetpack.di.Modules

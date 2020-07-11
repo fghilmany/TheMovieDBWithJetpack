@@ -1,11 +1,11 @@
-package com.fghilmany.themoviedbwithjetpack.data.source.local.entity
+package com.fghilmany.themoviedbwithjetpack.data.source.remote.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class SearchEntity(
+data class Search(
     @SerializedName("id")
     var id : String = "",
     @SerializedName("poster_path")

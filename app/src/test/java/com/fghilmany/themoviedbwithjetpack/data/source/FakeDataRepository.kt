@@ -3,19 +3,21 @@ package com.fghilmany.themoviedbwithjetpack.data.source
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.MovieEntity
-import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEntity
+import com.fghilmany.themoviedbwithjetpack.data.Datasource
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.Movie
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.TvSeries
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.RemoteDataSource
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailMovieResponse
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailTvSeriesResponse
 
-class FakeDataRepository (private val remoteDataSource: RemoteDataSource): Datasource{
+class FakeDataRepository (private val remoteDataSource: RemoteDataSource):
+    Datasource {
 
-    override fun getListMovie(): LiveData<List<MovieEntity>> {
+    override fun getListMovie(): LiveData<List<Movie>> {
 
-        val movieResults = MutableLiveData<List<MovieEntity>>()
+        val movieResults = MutableLiveData<List<Movie>>()
         remoteDataSource.getListMovie(object : RemoteDataSource.GetListMovieCallback{
-            override fun onResponse(listMovie: List<MovieEntity>?) {
+            override fun onResponse(listMovie: List<Movie>?) {
                 movieResults.postValue(listMovie)
             }
 
@@ -29,11 +31,11 @@ class FakeDataRepository (private val remoteDataSource: RemoteDataSource): Datas
 
     }
 
-    override fun getListTv(): LiveData<List<TvSeriesEntity>> {
+    override fun getListTv(): LiveData<List<TvSeries>> {
 
-        val tvResults = MutableLiveData<List<TvSeriesEntity>>()
+        val tvResults = MutableLiveData<List<TvSeries>>()
         remoteDataSource.getListTv(object : RemoteDataSource.GetLisTvCallback {
-            override fun onResponse(listTv: List<TvSeriesEntity>?) {
+            override fun onResponse(listTv: List<TvSeries>?) {
                 tvResults.postValue(listTv)
                 //Log.e(DataRepository::class.java.simpleName, listTv?.get(0)?.name)
             }

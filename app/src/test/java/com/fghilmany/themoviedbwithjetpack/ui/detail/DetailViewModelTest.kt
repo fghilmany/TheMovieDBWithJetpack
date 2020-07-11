@@ -3,7 +3,7 @@ package com.fghilmany.themoviedbwithjetpack.ui.detail
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.fghilmany.themoviedbwithjetpack.data.source.DataRepository
+import com.fghilmany.themoviedbwithjetpack.data.DataRepository
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailMovieResponse
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailTvSeriesResponse
 import org.junit.Assert.assertNotNull

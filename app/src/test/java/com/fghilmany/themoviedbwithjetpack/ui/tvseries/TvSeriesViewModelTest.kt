@@ -3,8 +3,8 @@ package com.fghilmany.themoviedbwithjetpack.ui.tvseries
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.fghilmany.themoviedbwithjetpack.data.source.DataRepository
-import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEntity
+import com.fghilmany.themoviedbwithjetpack.data.DataRepository
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.TvSeries
 import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Rule
@@ -27,7 +27,7 @@ class TvSeriesViewModelTest {
     private lateinit var dataRepository: DataRepository
 
     @Mock
-    private lateinit var observer: Observer<List<TvSeriesEntity>>
+    private lateinit var observer: Observer<List<TvSeries>>
 
     @Before
     fun setUp(){
@@ -37,8 +37,8 @@ class TvSeriesViewModelTest {
 
     @Test
     fun getMovies() {
-        val dataDummy = listOf<TvSeriesEntity>()
-        val dataMovie = MutableLiveData<List<TvSeriesEntity>>()
+        val dataDummy = listOf<TvSeries>()
+        val dataMovie = MutableLiveData<List<TvSeries>>()
         dataMovie.value = dataDummy
         Mockito.`when`(dataRepository.getListTv()).thenReturn(dataMovie)
         val tvEntities = viewModel.getMovies().value

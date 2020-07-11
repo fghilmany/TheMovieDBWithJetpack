@@ -3,7 +3,7 @@ package com.fghilmany.themoviedbwithjetpack.viewmodel
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.fghilmany.themoviedbwithjetpack.data.source.DataRepository
+import com.fghilmany.themoviedbwithjetpack.data.DataRepository
 import com.fghilmany.themoviedbwithjetpack.di.Injection
 import com.fghilmany.themoviedbwithjetpack.ui.detail.DetailViewModel
 import com.fghilmany.themoviedbwithjetpack.ui.movie.MovieViewModel

@@ -3,8 +3,8 @@ package com.fghilmany.themoviedbwithjetpack.ui.movie
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.fghilmany.themoviedbwithjetpack.data.source.DataRepository
-import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.MovieEntity
+import com.fghilmany.themoviedbwithjetpack.data.DataRepository
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.Movie
 import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Rule
@@ -28,7 +28,7 @@ class MovieViewModelTest {
     private lateinit var dataRepository: DataRepository
 
     @Mock
-    private lateinit var observer: Observer<List<MovieEntity>>
+    private lateinit var observer: Observer<List<Movie>>
 
     @Before
     fun setUp(){
@@ -37,8 +37,8 @@ class MovieViewModelTest {
     }
     @Test
     fun getMovies() {
-        val dataDummy = listOf<MovieEntity>()
-        val dataMovie = MutableLiveData<List<MovieEntity>>()
+        val dataDummy = listOf<Movie>()
+        val dataMovie = MutableLiveData<List<Movie>>()
         dataMovie.value = dataDummy
         Mockito.`when`(dataRepository.getListMovie()).thenReturn(dataMovie)
         val moviesEntities = viewModel.getMovies().value

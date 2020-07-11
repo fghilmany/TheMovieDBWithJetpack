@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fghilmany.themoviedbwithjetpack.R
-import com.fghilmany.themoviedbwithjetpack.viewmodel.ViewModelFactory
+import com.fghilmany.themoviedbwithjetpack.vo.Status
 import kotlinx.android.synthetic.main.fragment_tv_series.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -32,11 +32,21 @@ class TvSeriesFragment : Fragment() {
         if (activity != null){
 
             val movieAdapter = TvSeriesAdapter()
-            progress_bar.visibility = View.VISIBLE
             viewModel.getMovies().observe(this, Observer {tv ->
-                progress_bar.visibility = View.GONE
-                movieAdapter.setMovies(tv)
-                movieAdapter.notifyDataSetChanged()
+                if (tv != null){
+                    when(tv.status){
+                        Status.LOADING -> progress_bar.visibility = View.VISIBLE
+                        Status.SUCCESS -> {
+                            progress_bar.visibility = View.GONE
+                            movieAdapter.setMovies(tv.data)
+                            movieAdapter.notifyDataSetChanged()
+                        }
+                        Status.ERROR -> {
+                            progress_bar.visibility = View.GONE
+                            Toast.makeText(context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
             })
 
             rv_tv.layoutManager = LinearLayoutManager(context)

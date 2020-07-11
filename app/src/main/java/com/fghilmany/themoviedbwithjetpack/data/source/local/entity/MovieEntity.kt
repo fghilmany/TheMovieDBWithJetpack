@@ -1,19 +1,39 @@
 package com.fghilmany.themoviedbwithjetpack.data.source.local.entity
 
-import android.os.Parcelable
-import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import androidx.annotation.NonNull
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-@Parcelize
+
+@Entity(tableName = "movieentities")
 data class MovieEntity(
-    @SerializedName("id")
+    @PrimaryKey
+    @NonNull
+    @ColumnInfo(name = "id")
     var id: Int = 0,
-    @SerializedName("poster_path")
+
+    @ColumnInfo(name = "posterPath")
     var posterPath: String = "",
-    @SerializedName("title")
+
+    @ColumnInfo(name = "title")
     var title: String = "",
-    @SerializedName("vote_average")
+
+    @ColumnInfo(name = "voteAverage")
     var voteAverage: Float = 0f,
-    @SerializedName("release_date")
-    var release_date: String = ""
-):Parcelable
+
+    @ColumnInfo(name = "release_date")
+    var release_date: String = "",
+
+    @ColumnInfo(name = "backdrop_path")
+    var backdropPath: String = "",
+
+    @ColumnInfo(name = "overview")
+    var overview: String = "",
+
+    @ColumnInfo(name = "status")
+    var status: String = "",
+
+    @ColumnInfo(name = "favorite")
+    var favorite: Boolean = false
+)

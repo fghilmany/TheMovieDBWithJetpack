@@ -1,8 +1,8 @@
 package com.fghilmany.themoviedbwithjetpack.data.source
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.MovieEntity
-import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEntity
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.Movie
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.TvSeries
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.RemoteDataSource
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailMovieResponse
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.DetailTvSeriesResponse
@@ -25,9 +25,9 @@ class DataRepositoryTest {
     private val remote = Mockito.mock(RemoteDataSource::class.java)
     private val dataRepository = FakeDataRepository(remote)
 
-    private val movieResponse = listOf<MovieEntity>()
+    private val movieResponse = listOf<Movie>()
     private val movieId = /*movieResponse[0].results[0].id.toString()*/ "419704"
-    private val tvResponse = listOf<TvSeriesEntity>()
+    private val tvResponse = listOf<TvSeries>()
     private val tvId = /*tvResponse[0].results[0].id.toString()*/ "93533"
     private val detailMovieResponse = DetailMovieResponse()
     private val detailTvResponse = DetailTvSeriesResponse()
