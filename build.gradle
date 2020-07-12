@@ -55,5 +55,6 @@ ext {
 
     roomVersion = '2.2.3'
 
+    pagingVersion = '2.1.1'
 
 }

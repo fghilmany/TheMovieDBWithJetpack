@@ -38,7 +38,7 @@ class TvSeriesFragment : Fragment() {
                         Status.LOADING -> progress_bar.visibility = View.VISIBLE
                         Status.SUCCESS -> {
                             progress_bar.visibility = View.GONE
-                            movieAdapter.setMovies(tv.data)
+                            movieAdapter.submitList(tv.data)
                             movieAdapter.notifyDataSetChanged()
                         }
                         Status.ERROR -> {

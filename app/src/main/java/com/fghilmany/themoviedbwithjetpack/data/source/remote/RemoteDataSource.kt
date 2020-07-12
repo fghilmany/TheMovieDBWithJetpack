@@ -15,16 +15,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class RemoteDataSource{
-    companion object{
-
-        @Volatile
-        private var instance: RemoteDataSource? = null
-
-        fun getInstance(): RemoteDataSource =
-            instance ?: synchronized(this){
-                instance ?: RemoteDataSource()
-            }
-    }
 
     private val retrofit = ApiClient().create()
 
@@ -88,8 +78,6 @@ class RemoteDataSource{
                     call: Call<DetailMovieResponse>,
                     response: Response<DetailMovieResponse>
                 ) {
-                    Log.e("CEK_BACK_RET", response.body()?.backdropPath)
-                    Log.e("CEK_BACK_RET", response.body()?.posterPath)
                     resulrDetailMovie.value = ApiResponse.success(response.body()!!)
                     EspressoIdlingResource.decrement()
                 }

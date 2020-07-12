@@ -1,6 +1,7 @@
 package com.fghilmany.themoviedbwithjetpack.data.source.local.room
 
 import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import androidx.room.*
 import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.MovieEntity
 import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEntity
@@ -9,16 +10,16 @@ import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEnti
 interface MovieTvDao {
 
     @Query("SELECT * FROM movieentities")
-    fun getMovie(): LiveData<List<MovieEntity>>
+    fun getMovie(): DataSource.Factory<Int, MovieEntity>
 
     @Query("SELECT * FROM movieentities where favorite = 1")
-    fun getFavoriteMovie(): LiveData<List<MovieEntity>>
+    fun getFavoriteMovie(): DataSource.Factory<Int, MovieEntity>
 
     @Query("SELECT * FROM tventities")
-    fun getTvSeries(): LiveData<List<TvSeriesEntity>>
+    fun getTvSeries(): DataSource.Factory<Int, TvSeriesEntity>
 
     @Query("SELECT * FROM tventities where favorite = 1")
-    fun getFavoriteTvSeries(): LiveData<List<TvSeriesEntity>>
+    fun getFavoriteTvSeries(): DataSource.Factory<Int, TvSeriesEntity>
 
     @Query("SELECT * FROM movieentities where id = :movieId")
     fun getDetailMovie(movieId: String): LiveData<MovieEntity>

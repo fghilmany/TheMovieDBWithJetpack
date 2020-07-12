@@ -1,26 +1,21 @@
 package com.fghilmany.themoviedbwithjetpack.data.source.local
 
 import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.MovieEntity
 import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEntity
 import com.fghilmany.themoviedbwithjetpack.data.source.local.room.MovieTvDao
 
 class LocalDataSource (private val mMovieTvDao: MovieTvDao){
 
-    companion object {
-        private var INSTANCE: LocalDataSource? = null
 
-        fun getInstance(movieTvDao: MovieTvDao): LocalDataSource =
-            INSTANCE ?: LocalDataSource(movieTvDao)
-    }
+    fun getAllMovies(): DataSource.Factory<Int, MovieEntity> = mMovieTvDao.getMovie()
 
-    fun getAllMovies(): LiveData<List<MovieEntity>> = mMovieTvDao.getMovie()
+    fun getAllTvSeries(): DataSource.Factory<Int, TvSeriesEntity> = mMovieTvDao.getTvSeries()
 
-    fun getAllTvSeries(): LiveData<List<TvSeriesEntity>> = mMovieTvDao.getTvSeries()
+    fun getFavoriteMovies(): DataSource.Factory<Int, MovieEntity> = mMovieTvDao.getFavoriteMovie()
 
-    fun getFavoriteMovies(): LiveData<List<MovieEntity>> = mMovieTvDao.getFavoriteMovie()
-
-    fun getFavoriteTvSeries(): LiveData<List<TvSeriesEntity>> = mMovieTvDao.getFavoriteTvSeries()
+    fun getFavoriteTvSeries(): DataSource.Factory<Int, TvSeriesEntity> = mMovieTvDao.getFavoriteTvSeries()
 
     fun getDetailMovie(idMove: String): LiveData<MovieEntity> = mMovieTvDao.getDetailMovie(idMove)
 

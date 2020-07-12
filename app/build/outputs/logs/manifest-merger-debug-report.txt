@@ -11,6 +11,7 @@ MERGED from [org.koin:koin-android-viewmodel:2.1.3] /home/fghilmany/.gradle/cach
 MERGED from [org.koin:koin-android-scope:2.1.3] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/1baacdfa9048630be86ee622a0d8afa9/jetified-koin-android-scope-2.1.3/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/aa9e18d12c5afb35dcd731ed91706877/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/f2ba21a9638e5fd2269785d55a9b0d33/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.paging:paging-runtime:2.1.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/58a4c75fdfd1acec8bfc57fee0b8e6b0/paging-runtime-2.1.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/df185bf65f20930e6a488ec363ef7f61/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/59a0d9b493c71bd63175f5da6c378b5c/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [jp.wasabeef:glide-transformations:4.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/566cd19a4ed59cb38c2c4ea5ed1af753/jetified-glide-transformations-4.0.0/AndroidManifest.xml:2:1-9:12
@@ -43,8 +44,8 @@ MERGED from [androidx.core:core:1.3.0] /home/fghilmany/.gradle/caches/transforms
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/b5d39c5912b6a4426597ef319d53c89e/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/1aa0b883c2d30eddd2d4aed91384585d/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/52892efa555b4f123a3ed8bbf3627164/jetified-gifdecoder-4.10.0/AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/0c780ff624e5fe74522576d2fdc69449/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/fb992a7353d54c70f242c298dd4630aa/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0-alpha03] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/f9699e9e886dda153c679818f7596ebe/lifecycle-livedata-2.1.0-alpha03/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.1.0-alpha03] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/143b892601c27ee6b1d0392b450420db/lifecycle-livedata-core-2.1.0-alpha03/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/9adf7df53652f41cb44a1a3ecd6a8bb3/core-runtime-2.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/ef25c544400d79b1297f9cef6d077794/sqlite-framework-2.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.0.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/485b7c2dd347427345aee24be6b8def4/sqlite-2.0.1/AndroidManifest.xml:17:1-22:12
@@ -158,6 +159,8 @@ MERGED from [androidx.appcompat:appcompat:1.1.0] /home/fghilmany/.gradle/caches/
 MERGED from [androidx.appcompat:appcompat:1.1.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/aa9e18d12c5afb35dcd731ed91706877/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/f2ba21a9638e5fd2269785d55a9b0d33/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/f2ba21a9638e5fd2269785d55a9b0d33/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.paging:paging-runtime:2.1.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/58a4c75fdfd1acec8bfc57fee0b8e6b0/paging-runtime-2.1.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.paging:paging-runtime:2.1.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/58a4c75fdfd1acec8bfc57fee0b8e6b0/paging-runtime-2.1.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/df185bf65f20930e6a488ec363ef7f61/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/df185bf65f20930e6a488ec363ef7f61/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/59a0d9b493c71bd63175f5da6c378b5c/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -222,10 +225,10 @@ MERGED from [androidx.cardview:cardview:1.0.0] /home/fghilmany/.gradle/caches/tr
 MERGED from [androidx.cardview:cardview:1.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/1aa0b883c2d30eddd2d4aed91384585d/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/52892efa555b4f123a3ed8bbf3627164/jetified-gifdecoder-4.10.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/52892efa555b4f123a3ed8bbf3627164/jetified-gifdecoder-4.10.0/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/0c780ff624e5fe74522576d2fdc69449/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/0c780ff624e5fe74522576d2fdc69449/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/fb992a7353d54c70f242c298dd4630aa/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/fb992a7353d54c70f242c298dd4630aa/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0-alpha03] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/f9699e9e886dda153c679818f7596ebe/lifecycle-livedata-2.1.0-alpha03/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0-alpha03] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/f9699e9e886dda153c679818f7596ebe/lifecycle-livedata-2.1.0-alpha03/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.1.0-alpha03] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/143b892601c27ee6b1d0392b450420db/lifecycle-livedata-core-2.1.0-alpha03/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.1.0-alpha03] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/143b892601c27ee6b1d0392b450420db/lifecycle-livedata-core-2.1.0-alpha03/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/9adf7df53652f41cb44a1a3ecd6a8bb3/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/9adf7df53652f41cb44a1a3ecd6a8bb3/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/fghilmany/.gradle/caches/transforms-2/files-2.1/ef25c544400d79b1297f9cef6d077794/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44

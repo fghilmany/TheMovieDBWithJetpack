@@ -1,6 +1,7 @@
 package com.fghilmany.themoviedbwithjetpack.ui.movie
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fghilmany.themoviedbwithjetpack.R
-import com.fghilmany.themoviedbwithjetpack.viewmodel.ViewModelFactory
 import com.fghilmany.themoviedbwithjetpack.vo.Status
 import kotlinx.android.synthetic.main.fragment_movie.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -43,7 +43,8 @@ class MovieFragment : Fragment() {
                         Status.LOADING -> progress_bar.visibility = View.VISIBLE
                         Status.SUCCESS -> {
                             progress_bar.visibility = View.GONE
-                            movieAdapter.setMovies(movie.data)
+                            Log.e("CEK_LIST+FAV", "ini ${movie.data}")
+                            movieAdapter.submitList(movie.data)
                             movieAdapter.notifyDataSetChanged()
                         }
                         Status.ERROR -> {

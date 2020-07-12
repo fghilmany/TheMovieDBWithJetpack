@@ -1958,6 +1958,8 @@ string fab_transformation_sheet_behavior
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string message_ok
+string message_undo
 string movie
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description

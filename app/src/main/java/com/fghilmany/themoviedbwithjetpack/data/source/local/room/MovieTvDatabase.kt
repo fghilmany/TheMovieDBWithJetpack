@@ -14,16 +14,4 @@ import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEnti
 abstract class MovieTvDatabase : RoomDatabase() {
     abstract fun movieTvDao(): MovieTvDao
 
-    companion object{
-
-        @Volatile
-        private var INSTANCE: MovieTvDatabase? = null
-
-        fun getInstance(context: Context): MovieTvDatabase =
-            INSTANCE ?: synchronized(this) {
-                INSTANCE ?: Room.databaseBuilder(context.applicationContext,
-                    MovieTvDatabase::class.java,
-                    "MovieTv.db").build()
-            }
-    }
 }
