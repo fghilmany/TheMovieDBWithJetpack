@@ -8,8 +8,6 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.fghilmany.themoviedbwithjetpack.R
 import com.fghilmany.themoviedbwithjetpack.ui.favorite.movie.FavoriteMovieFragment
 import com.fghilmany.themoviedbwithjetpack.ui.favorite.tvseries.FavoriteTvSeriesFragment
-import com.fghilmany.themoviedbwithjetpack.ui.movie.MovieFragment
-import com.fghilmany.themoviedbwithjetpack.ui.tvseries.TvSeriesFragment
 
 class FavoriteSectionPagerAdapter (private val mContext: Context, fm: FragmentManager): FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT){
 

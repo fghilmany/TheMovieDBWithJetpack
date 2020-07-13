@@ -3,7 +3,6 @@ package com.fghilmany.themoviedbwithjetpack.di
 import androidx.room.Room
 import com.fghilmany.themoviedbwithjetpack.data.DataRepository
 import com.fghilmany.themoviedbwithjetpack.data.source.local.LocalDataSource
-import com.fghilmany.themoviedbwithjetpack.data.source.local.room.MovieTvDao
 import com.fghilmany.themoviedbwithjetpack.data.source.local.room.MovieTvDatabase
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.RemoteDataSource
 import com.fghilmany.themoviedbwithjetpack.ui.detail.DetailViewModel

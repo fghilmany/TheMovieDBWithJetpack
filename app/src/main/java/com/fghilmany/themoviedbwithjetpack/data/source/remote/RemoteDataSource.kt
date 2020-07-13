@@ -4,9 +4,6 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.fghilmany.themoviedbwithjetpack.BuildConfig
-import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.Movie
-import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.Search
-import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.TvSeries
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.*
 import com.fghilmany.themoviedbwithjetpack.helper.ApiClient
 import com.fghilmany.themoviedbwithjetpack.utils.EspressoIdlingResource
