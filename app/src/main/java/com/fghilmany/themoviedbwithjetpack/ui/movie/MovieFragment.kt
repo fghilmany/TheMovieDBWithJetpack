@@ -42,9 +42,7 @@ class MovieFragment : Fragment() {
                         Status.LOADING -> progress_bar.visibility = View.VISIBLE
                         Status.SUCCESS -> {
                             progress_bar.visibility = View.GONE
-                            Log.e("CEK_LIST+FAV", "ini ${movie.data}")
                             movieAdapter.submitList(movie.data)
-                            movieAdapter.notifyDataSetChanged()
                         }
                         Status.ERROR -> {
                             progress_bar.visibility = View.GONE

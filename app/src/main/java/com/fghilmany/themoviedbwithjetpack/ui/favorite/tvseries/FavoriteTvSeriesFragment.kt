@@ -49,19 +49,9 @@ class FavoriteTvSeriesFragment : Fragment() {
                     rv_favorite_tv.adapter = favoriteAdapter
                 }
             })
-
-            //favoriteAdapter = FavoriteTvSeriesAdapter()
-
-          /*  viewModel.getMovies().observe(this, observerTv)
-            Log.e("CEKCEK", "${viewModel.getMovies().observe(this, observerTv)}")
-            Log.e("CEKCEK", "$observerTv")*/
         }
     }
 
-  /*  private val observerTv = Observer<PagedList<TvSeriesEntity>> {
-        favoriteAdapter.submitList(it)
-    }
-*/
     private val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.Callback(){
         override fun getMovementFlags(
             recyclerView: RecyclerView,

@@ -1391,14 +1391,12 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_add
-drawable ic_back
 drawable ic_broken_image_black
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
 drawable ic_edit_black_24dp
 drawable ic_error
 drawable ic_favorite
-drawable ic_favorite_border
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
 drawable ic_launcher_foreground
@@ -1412,6 +1410,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_rating
 drawable ic_refresh_black
 drawable ic_remove
+drawable ic_search
 drawable ic_tmdb_logo
 drawable ic_tmdb_logo_long
 drawable mtrl_dialog_background
@@ -1955,7 +1954,6 @@ string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
-string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string message_ok

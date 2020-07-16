@@ -1,6 +1,5 @@
 package com.fghilmany.themoviedbwithjetpack.ui.detail
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
@@ -38,8 +37,6 @@ class DetailViewModel(private val dataRepository: DataRepository) : ViewModel() 
             val movie = movieResource.data
             if (movie != null){
                 val newState = !movie.favorite
-                Log.e("CEK_FAV_STATUS2", movie.favorite.toString())
-                Log.e("CEK_FAV_STATUS2", newState.toString())
                 dataRepository.setMovieFavorite(movie, newState)
             }
         }

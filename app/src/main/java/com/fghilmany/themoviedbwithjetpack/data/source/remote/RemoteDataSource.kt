@@ -21,7 +21,6 @@ class RemoteDataSource{
         retrofit.getMovieData(BuildConfig.TMDB_API_KEY)
             .enqueue(object : Callback<MovieResponse> {
                 override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
-                    Log.e("ERROR_LIST_MOVIE",t.localizedMessage!!)
                     EspressoIdlingResource.decrement()
                 }
 
@@ -44,7 +43,6 @@ class RemoteDataSource{
         retrofit.getTvData(BuildConfig.TMDB_API_KEY)
             .enqueue(object : Callback<TvSeriesResponse> {
                 override fun onFailure(call: Call<TvSeriesResponse>, t: Throwable) {
-                    Log.e("ERROR_LIST_MOVIE",t.localizedMessage!!)
                     EspressoIdlingResource.decrement()
                 }
 
@@ -67,7 +65,6 @@ class RemoteDataSource{
         retrofit.getDetailMovie(idMovie, BuildConfig.TMDB_API_KEY)
             .enqueue(object : Callback<DetailMovieResponse> {
                 override fun onFailure(call: Call<DetailMovieResponse>, t: Throwable) {
-                    Log.e("ERROR_DETAIL_MOVIE",t.localizedMessage!!)
                     EspressoIdlingResource.decrement()
                 }
 
@@ -90,7 +87,6 @@ class RemoteDataSource{
         retrofit.getDetailTv(idTv, BuildConfig.TMDB_API_KEY)
             .enqueue(object : Callback<DetailTvSeriesResponse> {
                 override fun onFailure(call: Call<DetailTvSeriesResponse>, t: Throwable) {
-                    Log.e("ERROR_DETAIL_TV",t.localizedMessage!!)
                     EspressoIdlingResource.decrement()
                 }
 
@@ -113,7 +109,6 @@ class RemoteDataSource{
         retrofit.getSearchMovieAndTv(BuildConfig.TMDB_API_KEY, query)
             .enqueue(object : Callback<SearchResponse>{
                 override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
-                    Log.e("ERROR_SEARCH",t.localizedMessage!!)
                     EspressoIdlingResource.decrement()
                 }
 
@@ -121,7 +116,6 @@ class RemoteDataSource{
                     call: Call<SearchResponse>,
                     response: Response<SearchResponse>
                 ) {
-                    Log.e("CEK_RESPONSE_RETRO","INI ${response.body()}")
                     if (response.body() != null){
                         resultSearch.value = ApiResponse.success(response.body()!!.results)
                     }

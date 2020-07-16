@@ -48,7 +48,6 @@ class DetailActivity : AppCompatActivity() {
                                 progress_bar.visibility = View.GONE
                                 populateMovie(movie.data!!)
                                 state = movie.data.favorite
-                                Log.e("CEK_FAV_STATUS1", state.toString())
                                 setFavoriteState(state)
 
 
@@ -63,14 +62,11 @@ class DetailActivity : AppCompatActivity() {
                 })
 
                 btn_favorite.setOnClickListener {
-                    Log.e("CEK_FAV_STATUS1", state.toString())
                     if (state) {
-                        Log.e("CEK_FAV_STATUS2", state.toString())
                         viewModel.setFavoriteMovie()
                         btn_favorite.text = resources.getText(R.string.remove_from_favorite)
                         btn_favorite.icon = ContextCompat.getDrawable(this, R.drawable.ic_remove)
                     }else{
-                        Log.e("CEK_FAV_STATUS2", state.toString())
                         viewModel.setFavoriteMovie()
                         btn_favorite.text = resources.getText(R.string.add_to_favorite)
                         btn_favorite.icon = ContextCompat.getDrawable(this, R.drawable.ic_add)

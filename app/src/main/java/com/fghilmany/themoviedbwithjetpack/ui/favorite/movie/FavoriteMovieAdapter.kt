@@ -17,13 +17,6 @@ import com.fghilmany.themoviedbwithjetpack.ui.detail.DetailActivity
 import kotlinx.android.synthetic.main.item_movie_tv.view.*
 
 class FavoriteMovieAdapter : PagedListAdapter<MovieEntity, FavoriteMovieAdapter.MovieViewHolder>(DIFF_CALLBACK){
-    /*private var listMovie = ArrayList<MovieEntity>()
-
-    fun setMovies(movies: List<MovieEntity>?){
-        if (movies == null) return
-        listMovie.clear()
-        listMovie.addAll(movies)
-    }*/
 
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<MovieEntity>() {

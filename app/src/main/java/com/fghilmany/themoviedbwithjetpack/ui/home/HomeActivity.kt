@@ -40,6 +40,7 @@ class HomeActivity : AppCompatActivity() {
 
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+        supportActionBar?.title = ""
         supportActionBar?.elevation = 0f
 
     }

@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/drawable_ic_search.xml.flat",
+        "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/drawable/ic_search.xml"
+    },
+    {
         "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/layout_fragment_movie.xml.flat",
         "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/layout/fragment_movie.xml"
     },
@@ -10,10 +14,6 @@
     {
         "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/layout_fragment_tv_series.xml.flat",
         "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/layout/fragment_tv_series.xml"
-    },
-    {
-        "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/drawable_ic_back.xml.flat",
-        "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/drawable/ic_back.xml"
     },
     {
         "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/drawable_ic_broken_image_black.xml.flat",
@@ -110,10 +110,6 @@
     {
         "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/drawable_ic_tmdb_logo.xml.flat",
         "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/drawable/ic_tmdb_logo.xml"
-    },
-    {
-        "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/drawable_ic_favorite_border.xml.flat",
-        "source": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/src/main/res/drawable/ic_favorite_border.xml"
     },
     {
         "merged": "/home/fghilmany/Documents/JetpackPro/TheMovieDBWithJetpack/app/build/intermediates/res/merged/debug/drawable_ic_error.xml.flat",
