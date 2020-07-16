@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.fghilmany.themoviedbwithjetpack.App"
+        android:name="com.fghilmany.themoviedbwithjetpack.di.App"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -21,6 +21,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.fghilmany.themoviedbwithjetpack.ui.favorite.FavoriteActivity" />
         <activity android:name="com.fghilmany.themoviedbwithjetpack.ui.detail.DetailActivity" />
         <activity android:name="com.fghilmany.themoviedbwithjetpack.ui.home.HomeActivity" >
             <intent-filter>
@@ -29,6 +30,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false" />
 
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"

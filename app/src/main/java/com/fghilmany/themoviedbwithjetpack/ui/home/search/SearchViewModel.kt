@@ -5,8 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.fghilmany.themoviedbwithjetpack.data.source.DataRepository
-import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.SearchEntity
+import com.fghilmany.themoviedbwithjetpack.data.DataRepository
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.ApiResponse
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.Search
 
 class SearchViewModel(private val dataRepository: DataRepository) : ViewModel() {
 
@@ -17,7 +18,7 @@ class SearchViewModel(private val dataRepository: DataRepository) : ViewModel() 
         Log.e("CEKQUEY", query)
     }
 
-    fun getMovies(): LiveData<List<SearchEntity>> = Transformations.switchMap(query){query ->
+    fun getMovies(): LiveData<ApiResponse<List<Search>>> = Transformations.switchMap(query){ query ->
         dataRepository.getSearch(query)
     }
 }

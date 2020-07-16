@@ -1390,11 +1390,13 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_add
 drawable ic_broken_image_black
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
 drawable ic_edit_black_24dp
 drawable ic_error
+drawable ic_favorite
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
 drawable ic_launcher_foreground
@@ -1407,6 +1409,8 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_rating
 drawable ic_refresh_black
+drawable ic_remove
+drawable ic_search
 drawable ic_tmdb_logo
 drawable ic_tmdb_logo_long
 drawable mtrl_dialog_background
@@ -1488,6 +1492,7 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
+id action_favorite
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -1508,6 +1513,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btn_favorite
 id buttonPanel
 id cancel_action
 id cancel_button
@@ -1655,6 +1661,8 @@ id right
 id right_icon
 id right_side
 id rounded
+id rv_favorite_movie
+id rv_favorite_tv
 id rv_movie
 id rv_search
 id rv_tv
@@ -1819,6 +1827,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_detail
+layout activity_favorite
 layout activity_home
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -1836,6 +1845,8 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_favorite_movie
+layout fragment_favorite_tv_series
 layout fragment_movie
 layout fragment_search
 layout fragment_tv_series
@@ -1930,6 +1941,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string add_to_favorite
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -1942,9 +1954,10 @@ string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
-string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string message_ok
+string message_undo
 string movie
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
@@ -1985,6 +1998,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string remove_from_favorite
 string search_menu_title
 string status_bar_notification_info_overflow
 string tv

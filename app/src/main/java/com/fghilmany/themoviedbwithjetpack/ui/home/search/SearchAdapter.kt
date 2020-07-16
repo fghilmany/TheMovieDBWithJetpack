@@ -9,14 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.fghilmany.themoviedbwithjetpack.R
-import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.SearchEntity
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.Search
 import com.fghilmany.themoviedbwithjetpack.ui.detail.DetailActivity
 import kotlinx.android.synthetic.main.item_movie_tv.view.*
 
 class SearchAdapter  : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>(){
-    private var listMovie = ArrayList<SearchEntity>()
+    private var listMovie = ArrayList<Search>()
 
-    fun setMovies(movies: List<SearchEntity>?){
+    fun setMovies(movies: List<Search>?){
         if (movies == null) return
         listMovie.clear()
         listMovie.addAll(movies)
@@ -39,7 +39,7 @@ class SearchAdapter  : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>(){
 
     class SearchViewHolder(view: View): RecyclerView.ViewHolder(view) {
         @SuppressLint("SetTextI18n")
-        fun bind (search: SearchEntity){
+        fun bind (search: Search){
             with(itemView){
                 if (search.title != ""){
                     tv_list_title.text = search.title

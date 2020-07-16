@@ -74,3 +74,72 @@ menampilkan data Detail
 Memastikan TextView untuk title ada
 Memastikan TextView untuk overview ada
 Memastikan ImageView untuk poster ada
+
+//submission 3
+//unit testing
+MovieViewModelTest
+memuat movie
+Memanipulasi data ketika pemangilan data Movie di kelas repository
+memastikan metode di kelas repository terpanggil
+memastikan movie tidak null
+
+TvViewModelTest
+memuat tv
+Memanipulasi data ketika pemangilan data Movie di kelas repository
+memastikan metode di kelas repository terpanggil
+memastikan tv tidak null
+
+DetailViewModelTest
+memuat data detail
+Memanipulasi data ketika pemangilan data Movie di kelas repository
+memastikan metode di kelas repository terpanggil
+memastikan data movie detail tidak null
+memastikan data tv detail tidak null
+
+FavoriteTvSeriesViewModel
+memuat tv favorite
+Memanipulasi data ketika pemangilan data tv di kelas repository
+memastikan metode di kelas repository terpanggil
+memastikan tv tidak null
+
+FavoriteMovieViewModel
+memuat movie favorite
+Memanipulasi data ketika pemangilan data Movie di kelas repository
+memastikan metode di kelas repository terpanggil
+memastikan movie tidak null
+
+//instrument test
+menampilkan data movie
+memastikan rv_movie dalam keadaan tampil
+gulir rv_movie ke posisi terakhir
+Memberi tindakan klik pada data pertama di rv_movie
+
+menampilkan data tv
+Memastikan tab Tv dapat di klik
+memastikan rv_tv dalam keadaan tampil
+gulir rv_tv ke posisi terakhir
+Memberi tindakan klik pada data pertama di rv_tv
+
+menampilkan data Detail
+Memastikan TextView untuk title ada
+Memastikan TextView untuk overview ada
+Memastikan ImageView untuk poster ada
+
+klik icon favorite
+menampilkan data favorite movie
+memastikan rv_favorite_movie dalam keadaan tampil
+gulir rv_favorite_movie ke posisi terakhir
+Memberi tindakan klik pada data pertama di rv_favorite_movie
+
+klik icon favorite
+Memastikan tab Tv dapat di klik
+menampilkan data favorite tv
+memastikan rv_favorite_tv dalam keadaan tampil
+gulir rv_favorite_tv ke posisi terakhir
+Memberi tindakan klik pada data pertama di rv_favorite_tv
+
+klik icon search
+mengetik "money heist" untuk query dan enter(ok)
+memastikan rv_search dalam keadaan tampil
+gulir rv_search ke posisi terakhir
+Memberi tindakan klik pada data pertama di rv_search

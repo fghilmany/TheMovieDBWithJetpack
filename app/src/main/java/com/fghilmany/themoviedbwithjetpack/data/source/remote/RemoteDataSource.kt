@@ -1,10 +1,9 @@
 package com.fghilmany.themoviedbwithjetpack.data.source.remote
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.fghilmany.themoviedbwithjetpack.BuildConfig
-import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.MovieEntity
-import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.SearchEntity
-import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.TvSeriesEntity
 import com.fghilmany.themoviedbwithjetpack.data.source.remote.response.*
 import com.fghilmany.themoviedbwithjetpack.helper.ApiClient
 import com.fghilmany.themoviedbwithjetpack.utils.EspressoIdlingResource
@@ -13,25 +12,15 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class RemoteDataSource{
-    companion object{
-
-        @Volatile
-        private var instance: RemoteDataSource? = null
-
-        fun getInstance(): RemoteDataSource =
-            instance ?: synchronized(this){
-                instance ?: RemoteDataSource()
-            }
-    }
 
     private val retrofit = ApiClient().create()
 
-    fun getListMovie(getListMovieCallback : GetListMovieCallback){
+    fun getListMovie(): LiveData<ApiResponse<List<Movie>>>{
+        val resultMovie = MutableLiveData<ApiResponse<List<Movie>>>()
         EspressoIdlingResource.increment()
         retrofit.getMovieData(BuildConfig.TMDB_API_KEY)
             .enqueue(object : Callback<MovieResponse> {
                 override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
-                    getListMovieCallback.throwbale(t)
                     EspressoIdlingResource.decrement()
                 }
 
@@ -39,20 +28,21 @@ class RemoteDataSource{
                     call: Call<MovieResponse>,
                     response: Response<MovieResponse>
                 ) {
-                    response.body()?.let { getListMovieCallback.onResponse(response.body()?.listMovie) }
+                    resultMovie.value = ApiResponse.success(response.body()!!.listMovie)
                     EspressoIdlingResource.decrement()
                 }
 
             })
+        return resultMovie
 
     }
 
-    fun getListTv(getListTvCallback : GetLisTvCallback){
+    fun getListTv(): LiveData<ApiResponse<List<TvSeries>>>{
+        val resultTvSeries = MutableLiveData<ApiResponse<List<TvSeries>>>()
         EspressoIdlingResource.increment()
         retrofit.getTvData(BuildConfig.TMDB_API_KEY)
             .enqueue(object : Callback<TvSeriesResponse> {
                 override fun onFailure(call: Call<TvSeriesResponse>, t: Throwable) {
-                    getListTvCallback.throwbale(t)
                     EspressoIdlingResource.decrement()
                 }
 
@@ -60,21 +50,21 @@ class RemoteDataSource{
                     call: Call<TvSeriesResponse>,
                     response: Response<TvSeriesResponse>
                 ) {
-                    response.body()?.let { getListTvCallback.onResponse(response.body()?.listTvSeries) }
-                    Log.e("CEK_VAL_FROM_RETRO", "${response.body()?.let { getListTvCallback.onResponse(response.body()?.listTvSeries)} }")
+                    resultTvSeries.value = ApiResponse.success(response.body()!!.listTvSeries)
                     EspressoIdlingResource.decrement()
                 }
 
             })
+        return resultTvSeries
 
     }
 
-    fun getDetailMovie(getDetailMovieCallback : GetDetailMovieCallback, idMovie: String){
+    fun getDetailMovie( idMovie: String): LiveData<ApiResponse<DetailMovieResponse>>{
+        val resulrDetailMovie = MutableLiveData<ApiResponse<DetailMovieResponse>>()
         EspressoIdlingResource.increment()
         retrofit.getDetailMovie(idMovie, BuildConfig.TMDB_API_KEY)
             .enqueue(object : Callback<DetailMovieResponse> {
                 override fun onFailure(call: Call<DetailMovieResponse>, t: Throwable) {
-                    getDetailMovieCallback.throwbale(t)
                     EspressoIdlingResource.decrement()
                 }
 
@@ -82,20 +72,21 @@ class RemoteDataSource{
                     call: Call<DetailMovieResponse>,
                     response: Response<DetailMovieResponse>
                 ) {
-                    response.body()?.let { getDetailMovieCallback.onResponse(response.body()!!) }
+                    resulrDetailMovie.value = ApiResponse.success(response.body()!!)
                     EspressoIdlingResource.decrement()
                 }
 
             })
+        return resulrDetailMovie
 
     }
 
-    fun getDetailTv(getDetailTvCallback: GetDetailTvCallback, idTv: String){
+    fun getDetailTv(idTv: String): LiveData<ApiResponse<DetailTvSeriesResponse>>{
+        val resultDetailTv = MutableLiveData<ApiResponse<DetailTvSeriesResponse>>()
         EspressoIdlingResource.increment()
         retrofit.getDetailTv(idTv, BuildConfig.TMDB_API_KEY)
             .enqueue(object : Callback<DetailTvSeriesResponse> {
                 override fun onFailure(call: Call<DetailTvSeriesResponse>, t: Throwable) {
-                    getDetailTvCallback.throwbale(t)
                     EspressoIdlingResource.decrement()
                 }
 
@@ -103,20 +94,21 @@ class RemoteDataSource{
                     call: Call<DetailTvSeriesResponse>,
                     response: Response<DetailTvSeriesResponse>
                 ) {
-                    response.body()?.let { getDetailTvCallback.onResponse(response.body()!!) }
+                    resultDetailTv.value = ApiResponse.success(response.body()!!)
                     EspressoIdlingResource.decrement()
                 }
 
             })
+        return resultDetailTv
 
     }
 
-    fun getSearchMovie(getSearchCallback: GetSearchMovieAndTvCallback, query: String){
+    fun getSearchMovie( query: String): LiveData<ApiResponse<List<Search>>>{
+        val resultSearch = MutableLiveData<ApiResponse<List<Search>>>()
         EspressoIdlingResource.increment()
         retrofit.getSearchMovieAndTv(BuildConfig.TMDB_API_KEY, query)
             .enqueue(object : Callback<SearchResponse>{
                 override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
-                    getSearchCallback.throwbale(t)
                     EspressoIdlingResource.decrement()
                 }
 
@@ -124,36 +116,15 @@ class RemoteDataSource{
                     call: Call<SearchResponse>,
                     response: Response<SearchResponse>
                 ) {
-                    Log.e("CEK_RESPONSE_RETRO","INI ${response.body()}")
-                    response.body()?.let { getSearchCallback.onResponse(response.body()?.results) }
+                    if (response.body() != null){
+                        resultSearch.value = ApiResponse.success(response.body()!!.results)
+                    }
                     EspressoIdlingResource.decrement()
                 }
 
             })
+
+        return resultSearch
     }
 
-    interface GetListMovieCallback {
-        fun onResponse(listMovie: List<MovieEntity>?)
-        fun throwbale(t: Throwable)
-    }
-
-    interface GetLisTvCallback {
-        fun onResponse(listTv: List<TvSeriesEntity>?)
-        fun throwbale(t: Throwable)
-    }
-
-    interface GetDetailMovieCallback {
-        fun onResponse(detailMovie: DetailMovieResponse)
-        fun throwbale(t: Throwable)
-    }
-
-    interface GetDetailTvCallback {
-        fun onResponse(detailTv: DetailTvSeriesResponse)
-        fun throwbale(t: Throwable)
-    }
-
-    interface GetSearchMovieAndTvCallback {
-        fun onResponse(listSearch: List<SearchEntity>?)
-        fun throwbale(t: Throwable)
-    }
 }

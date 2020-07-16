@@ -161,7 +161,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/home/fghilmany/Downloads/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/toggle/ic_star_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/home/fghilmany/Downloads/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_search_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -171,10 +171,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="assetSourceType" value="FILE" />
-                            <entry key="color" value="ffed00" />
-                            <entry key="opacityPercent" value="30" />
-                            <entry key="outputName" value="ic_tmdb_logo" />
+                            <entry key="color" value="fcfcfc" />
+                            <entry key="outputName" value="ic_search" />
                             <entry key="sourceFile" value="$USER_HOME$/Pictures/tmdb_logo.svg" />
                           </map>
                         </option>

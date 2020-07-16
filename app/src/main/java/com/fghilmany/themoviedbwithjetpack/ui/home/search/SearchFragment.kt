@@ -2,18 +2,17 @@ package com.fghilmany.themoviedbwithjetpack.ui.home.search
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.fghilmany.themoviedbwithjetpack.R
+import com.fghilmany.themoviedbwithjetpack.data.source.remote.StatusResponse
 import kotlinx.android.synthetic.main.fragment_search.*
-import org.koin.android.viewmodel.ext.android.getViewModel
 import org.koin.android.viewmodel.ext.android.sharedViewModel
-import org.koin.android.viewmodel.ext.android.viewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -46,9 +45,20 @@ class SearchFragment : Fragment() {
 
             val  searchAdapter = SearchAdapter()
             viewModel.getMovies().observe(this, Observer { movie ->
-                Log.e("CEK_VM_SHARED", movie.toString())
-                searchAdapter.setMovies(movie)
-                searchAdapter.notifyDataSetChanged()
+                if (movie != null){
+                    when (movie.status){
+                        StatusResponse.SUCCESS ->{
+                            Log.e("CEK_VM_SHARED", movie.toString())
+                            searchAdapter.setMovies(movie.body)
+                            searchAdapter.notifyDataSetChanged()
+                        }
+                        StatusResponse.ERROR -> {
+
+                            Toast.makeText(this.context, "Terjadi kesalahan", Toast.LENGTH_SHORT).show()
+                        }
+
+                    }
+                }
             })
             rv_search.layoutManager = LinearLayoutManager(activity?.applicationContext)
             rv_search.setHasFixedSize(true)

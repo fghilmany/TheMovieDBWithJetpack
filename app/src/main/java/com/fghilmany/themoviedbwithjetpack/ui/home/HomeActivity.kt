@@ -2,23 +2,21 @@ package com.fghilmany.themoviedbwithjetpack.ui.home
 
 import android.app.SearchManager
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import androidx.core.view.MenuItemCompat
-import androidx.lifecycle.ViewModelProvider
 import com.fghilmany.themoviedbwithjetpack.R
+import com.fghilmany.themoviedbwithjetpack.ui.favorite.FavoriteActivity
 import com.fghilmany.themoviedbwithjetpack.ui.home.search.SearchFragment
 import com.fghilmany.themoviedbwithjetpack.ui.home.search.SearchViewModel
-import com.fghilmany.themoviedbwithjetpack.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_home.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -42,6 +40,7 @@ class HomeActivity : AppCompatActivity() {
 
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+        supportActionBar?.title = ""
         supportActionBar?.elevation = 0f
 
     }
@@ -49,7 +48,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         val searchItem: MenuItem = menu.findItem(R.id.action_search)
-        searchView = MenuItemCompat.getActionView(searchItem) as SearchView
+        searchView = searchItem.actionView as SearchView
         searchView.setOnCloseListener { true }
         searchView.setOnSearchClickListener {
             val fragment= SearchFragment.newInstance()
@@ -84,7 +83,17 @@ class HomeActivity : AppCompatActivity() {
         val searchManager =
             getSystemService(Context.SEARCH_SERVICE) as SearchManager
         searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.action_favorite -> {
+                startActivity(Intent(this, FavoriteActivity::class.java))
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 

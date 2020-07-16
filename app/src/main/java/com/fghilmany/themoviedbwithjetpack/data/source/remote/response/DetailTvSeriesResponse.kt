@@ -17,9 +17,12 @@ data class DetailTvSeriesResponse(
     @SerializedName("overview")
     var overview: String = "",
     @SerializedName("vote_average")
-    var voteAverage: Double = 0.0,
+    var voteAverage: Float = 0f,
     @SerializedName("status")
     var status: String = "",
     @SerializedName("number_of_seasons")
-    var number_of_seasons: String = ""
+    var number_of_seasons: String = "",
+
+    @SerializedName("first_air_date")
+    var first_air_date: String = ""
 ):Parcelable

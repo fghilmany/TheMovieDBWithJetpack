@@ -19,5 +19,7 @@ data class DetailMovieResponse(
     @SerializedName("vote_average")
     var voteAverage: Float = 0f,
     @SerializedName("status")
-    var status: String = ""
+    var status: String = "",
+    @SerializedName("release_date")
+    var release_date: String = ""
 ):Parcelable
