@@ -6,11 +6,14 @@ import androidx.paging.PagedList
 import com.fghilmany.themoviedbwithjetpack.data.DataRepository
 import com.fghilmany.themoviedbwithjetpack.data.source.local.entity.MovieEntity
 
-class FavoriteMovieViewModel(private val dataRepository: DataRepository) : ViewModel() {
-    fun getMovies(): LiveData<PagedList<MovieEntity>> = dataRepository.getFavoriteMovie()
+class FavoriteMovieViewModel(dataRepository: DataRepository) : ViewModel() {
+
+    private val movieDataRepository = dataRepository
+
+    fun getMovies(): LiveData<PagedList<MovieEntity>> = movieDataRepository.getFavoriteMovie()
 
     fun setMovie(movieEntity: MovieEntity){
         val newState = !movieEntity.favorite
-        dataRepository.setMovieFavorite(movieEntity, newState)
+        movieDataRepository.setMovieFavorite(movieEntity, newState)
     }
 }

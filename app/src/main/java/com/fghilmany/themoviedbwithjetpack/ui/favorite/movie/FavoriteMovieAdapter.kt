@@ -37,8 +37,6 @@ class FavoriteMovieAdapter : PagedListAdapter<MovieEntity, FavoriteMovieAdapter.
         return MovieViewHolder(view)
     }
 
-    /*override fun getItemCount(): Int = listMovie.size*/
-
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val movies = getItem(position)
         if (movies != null){
@@ -47,6 +45,9 @@ class FavoriteMovieAdapter : PagedListAdapter<MovieEntity, FavoriteMovieAdapter.
     }
 
     inner class MovieViewHolder(view: View): RecyclerView.ViewHolder(view) {
+
+        private val imageUrl = "https://image.tmdb.org/t/p/w780"
+
         @SuppressLint("SetTextI18n")
         fun bind (movie: MovieEntity){
             with(itemView){
@@ -61,7 +62,7 @@ class FavoriteMovieAdapter : PagedListAdapter<MovieEntity, FavoriteMovieAdapter.
                     itemView.context.startActivity(i)
                 }
                 Glide.with(context)
-                    .load("https://image.tmdb.org/t/p/w780"+movie.posterPath)
+                    .load(imageUrl+movie.posterPath)
                     .apply(RequestOptions.placeholderOf(R.drawable.ic_loading)
                         .error(R.drawable.ic_error))
                     .into(iv_list)

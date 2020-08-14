@@ -2,7 +2,6 @@ package com.fghilmany.themoviedbwithjetpack.ui.detail
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -110,7 +109,6 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun setFavoriteState(state: Boolean){
-        Log.e("CEK_TEXT", state.toString())
 
         if (state){
             btn_favorite.text = resources.getText(R.string.remove_from_favorite)
@@ -148,7 +146,6 @@ class DetailActivity : AppCompatActivity() {
         tv_status.text = "Status: "+ detailTvSeries.status
         tv_seasion.text = "Season: "+ detailTvSeries.number_of_seasons
         tv_rating.text = detailTvSeries.voteAverage.toString()
-        Log.e("CEK_BACKFROP", "ini"+detailTvSeries.backdropPath)
         Glide.with(this)
             .load("https://image.tmdb.org/t/p/w780"+detailTvSeries.posterPath)
             .apply ( RequestOptions.placeholderOf(R.drawable.ic_loading)

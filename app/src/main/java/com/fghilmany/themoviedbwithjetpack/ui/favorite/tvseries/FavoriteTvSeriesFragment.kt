@@ -1,7 +1,6 @@
 package com.fghilmany.themoviedbwithjetpack.ui.favorite.tvseries
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,9 +40,6 @@ class FavoriteTvSeriesFragment : Fragment() {
                 if (movie != null){
 
                     favoriteAdapter.submitList(movie)
-                    Log.e("CEKFAVORITE","${favoriteAdapter.submitList(movie)}")
-                    Log.e("CEKFAVORITE","${movie}")
-//                    favoriteAdapter.notifyDataSetChanged()
                     rv_favorite_tv.layoutManager = LinearLayoutManager(context)
                     rv_favorite_tv.setHasFixedSize(true)
                     rv_favorite_tv.adapter = favoriteAdapter

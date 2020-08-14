@@ -1,6 +1,5 @@
 package com.fghilmany.themoviedbwithjetpack.data.source.remote
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.fghilmany.themoviedbwithjetpack.BuildConfig

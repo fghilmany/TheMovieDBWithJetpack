@@ -11,4 +11,6 @@
     <string name="remove_from_favorite">Remove From Favorite</string>
     <string name="message_undo">Batalkan menghapus item sebelumnya?</string>
     <string name="message_ok">OK</string>
+    <string name="image_header">image header</string>
+    <string name="image_background">image background</string>
 </resources>
